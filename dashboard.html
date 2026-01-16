@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+<h2>Book Records</h2>
+<a href="/add">Add Book</a> | <a href="/logout">Logout</a>
+<table border="1">
+<tr>
+    <th>ID</th><th>Name</th><th>Author</th><th>Price</th><th>Qty</th><th>Action</th>
+</tr>
+{% for b in books %}
+<tr>
+    <td>{{b[0]}}</td>
+    <td>{{b[1]}}</td>
+    <td>{{b[2]}}</td>
+    <td>{{b[3]}}</td>
+    <td>{{b[4]}}</td>
+    <td><a href="/delete/{{b[0]}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
